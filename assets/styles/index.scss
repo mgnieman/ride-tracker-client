@@ -1,2 +1,16 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+$background-color: #D0E9EA;
+$font-color: #000006;
+// $white: #fff;
+
+body {
+  background-color: $background-color;
+  color: $font-color;
+  height: 150%;
+
+  .signed-in {
+    display: none;
+  }
+}
