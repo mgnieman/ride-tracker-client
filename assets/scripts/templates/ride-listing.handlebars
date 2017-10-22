@@ -5,12 +5,5 @@
 
  <!-- Developers, why are we using data-id and not just id? -->
   <h1 data-id="{{ride.id}}"> <small>Date: {{ride.date}}</small></h1>
-  <div>
-    {{#if ride.description}}
-      {{ride.description}}
-    {{else}}
-      No description.
-    {{/if}}
-  </div>
 
 {{/each}}

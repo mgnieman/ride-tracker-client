@@ -1,23 +1,14 @@
 'use strict'
 
-const showRidesTemplate = require('../templates/ride-listing.handlebars')
+const app = require('../app.js')
 
-const getRidesSuccess = (data) => {
-  console.log(data)
-  const showRidesHtml = showRidesTemplate({ rides: data.rides })
-  $('.content').append(showRidesHtml)
-}
-
-const clearRides = () => {
-  $('.content').empty()
-}
-
-const failure = (error) => {
-  console.error(error)
+const getRides = function () {
+  return $.ajax({
+    url: app.host + '/rides', // "http://book-json.herokuapp.com/books"
+    method: 'GET'
+  })
 }
 
 module.exports = {
-  getRidesSuccess,
-  clearRides,
-  failure
+  getRides
 }
