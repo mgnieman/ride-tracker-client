@@ -15,3 +15,6 @@ Future Enhancements:
 
 10.20
 - Worked on authorization - sign up gave me a lot of trouble but eventually got help figuring out that I needed a function for `addHandlers` in `index.js`.  It's 4:24pm and I finally have sign-up, sign-in, change-password & sign-out all working correctly.
+
+10.22
+- Add buttons - "Add Ride" & "Clear Ride" and initial setup for handlebars.
