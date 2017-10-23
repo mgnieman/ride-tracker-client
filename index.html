@@ -16,26 +16,24 @@
       <div id='message'></div>
 
       <div class = "signed-in">
-
-
-
-        <button id="addRidesButton" class="btn btn-default">Add Ride</button>
-        <button id="clearRidesButton" class="btn btn-default">Clear Ride</button>
+        <button id="getRidesButton" class="btn btn-default">Get Rides</button>
+        <button id="addNewRideButton" class="btn btn-default">Add A Ride</button>
+        <!-- <button id="addRidesButton" class="btn btn-default">Add Ride</button> -->
+        <button id="clearRidesButton" class="btn btn-default">Clear Rides</button>
         <div id="content" class="content">
-      </div>
+        </div>
 
-        <!-- <div class="ride-list">
-          <form id="date">
+        <div class = "add-new-ride">
+          <form id ="add-ride">
             <fieldset>
-              <legend>Date</legend>
-              <input type="submit" name="submit" value="Sign Out">
+              <legend>Add recent ride info</legend>
+              <input type="text" name="ride[date]" placeholder="Date (2017-08-14)">
+              <input type="text" name="ride[distance]" placeholder="Distance in miles">
+              <input type="text" name="ride[duration]" placeholder="Duration in minutes">
+              <input type="submit" name="submit" value="Add Ride">
             </fieldset>
           </form>
-        </div> -->
-
-
-
-
+        </div>
 
         <form id="sign-out">
           <fieldset>

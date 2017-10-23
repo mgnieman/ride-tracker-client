@@ -3,6 +3,18 @@
 const api = require('./api.js')
 const ui = require('./ui.js')
 
+const onAddNewRide = (event) => {
+  event.preventDefault()
+  ui.addNewRide()
+}
+
+// const onAddRide = (event) => {
+//   event.preventDefault()
+//   api.addRide()
+//     .then(ui.addRideSuccess)
+//     .catch(ui.failure)
+// }
+
 const onGetRides = (event) => {
   event.preventDefault()
   api.getRides()
@@ -16,7 +28,8 @@ const onClearRides = (event) => {
 }
 
 const addHandlers = () => {
-  $('#addRidesButton').on('click', onGetRides)
+  $('#addNewRideButton').on('click', onAddNewRide)
+  $('#getRidesButton').on('click', onGetRides)
   $('#clearRidesButton').on('click', onClearRides)
 }
 

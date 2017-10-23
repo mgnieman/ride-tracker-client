@@ -18,3 +18,6 @@ Future Enhancements:
 
 10.22
 - Add buttons - "Add Ride" & "Clear Ride" and initial setup for handlebars.
+
+10.23
+- Added a form to add ride info (date, distance & duration)
