@@ -20,4 +20,4 @@ Future Enhancements:
 - Add buttons - "Add Ride" & "Clear Ride" and initial setup for handlebars.
 
 10.23
-- Added a form to add ride info (date, distance & duration)
+- Added a form to add ride info (date, distance & duration) and updated the CREATE method to add the data to my resource.
