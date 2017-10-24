@@ -1,6 +1,5 @@
 'use strict'
 
-// const app = require('../app.js')
 const store = require('../store')
 const config = require('../config')
 
@@ -36,9 +35,6 @@ const deleteRide = function (data) {
 }
 
 const updateRide = function (data) {
-  console.log('API data is', data)
-  console.log('data.ride.id', data.ride.id)
-
   return $.ajax({
     url: config.apiOrigin + '/rides/' + data.ride.id,
     method: 'PATCH',

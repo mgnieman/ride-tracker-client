@@ -40,6 +40,7 @@ const signOutSuccess = function () {
   $('.clear').hide()
   $('.sign-up-in').show()
   $('.ride-list').hide()
+  $('.update').hide()
   store.user = null
 }
 const signOutFailure = function () {

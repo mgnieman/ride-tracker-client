@@ -22,11 +22,9 @@ const addRideSuccess = (data) => {
   $('.add-new-ride').hide()
   $('#message').text('Your ride has been added. Select Get Rides to view')
   $('.get').show()
-  // $('.content').show()
 }
 
 const getRidesSuccess = (data) => {
-  // console.log(data)
   clearRides()
   const showRidesHtml = showRidesTemplate({ rides: data.rides })
   $('.content').append(showRidesHtml).show()
@@ -37,9 +35,6 @@ const getRidesSuccess = (data) => {
 }
 
 const deleteRideSuccess = (index) => {
-  // const showRidesHtml = showRidesTemplate({ rides: data.rides })
-  // // console.log('data.rides is ', data.rides)
-  // $('.content').append(showRidesHtml)
   $('#clearRidesButton').click()
   $('#getRidesButton').click()
   $('#message').text('Your ride has been deleted')
