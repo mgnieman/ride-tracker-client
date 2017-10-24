@@ -18,7 +18,7 @@ const addNewRide = () => {
 
 const addRideSuccess = (data) => {
   store.rideId = data.ride.id
-  // $('#add-ride')[0].reset()
+  $('#add-ride')[0].reset()
   $('.add-new-ride').hide()
   $('#message').text('Your ride has been added. Select Get Rides to view')
   $('.get').show()
@@ -32,6 +32,8 @@ const getRidesSuccess = (data) => {
   $('.content').append(showRidesHtml).show()
   $('.get').hide()
   $('.clear').show()
+  $('.display-add-form').show()
+  $('#message').text('')
 }
 
 const deleteRideSuccess = (index) => {
@@ -69,6 +71,7 @@ const updateRideSuccess = () => {
   $('#clearRidesButton').click()
   $('#getRidesButton').click()
   $('#message').text('Your changes have been saved')
+  $('#update-ride')[0].reset()
   $('.update').hide()
 }
 
