@@ -12,8 +12,8 @@ const signUpFailure = function () {
 }
 const signInSuccess = function (data) {
   $('#message').text('You are now signed in')
+  $('#sign-in').hide()
   $('.signed-in').show()
-  $('.sign-up-in').hide()
   $('.get').show()
   $('.display-add-form').show()
   $('#sign-in')[0].reset()
@@ -34,11 +34,12 @@ const changePasswordFailure = function () {
 
 const signOutSuccess = function () {
   $('#message').text('You have successfully signed out')
+  $('#sign-in').show()
+  $('#sign-up').show()
   $('.signed-in').hide()
   $('.display-add-form').hide()
   $('.get').hide()
   $('.clear').hide()
-  $('.sign-up-in').show()
   $('.ride-list').hide()
   $('.update').hide()
   store.user = null
