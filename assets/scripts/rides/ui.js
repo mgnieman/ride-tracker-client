@@ -3,29 +3,35 @@
 const showRidesTemplate = require('../templates/ride-listing.handlebars')
 const store = require('../store')
 
+const clearRides = () => {
+  $('.content').empty()
+  // $('.clear').hide()
+  $('.get').show()
+}
+
 const addNewRide = () => {
   $('.get').hide()
+  $('.content').hide()
   $('.display-add-form').hide()
   $('.add-new-ride').show()
 }
 
 const addRideSuccess = (data) => {
   store.rideId = data.ride.id
-  $('#message').text('Your ride has been added')
+  // $('#add-ride')[0].reset()
+  $('.add-new-ride').hide()
+  $('#message').text('Your ride has been added. Select Get Rides to view')
+  $('.get').show()
+  // $('.content').show()
 }
 
 const getRidesSuccess = (data) => {
   // console.log(data)
+  clearRides()
   const showRidesHtml = showRidesTemplate({ rides: data.rides })
-  $('.content').append(showRidesHtml)
+  $('.content').append(showRidesHtml).show()
   $('.get').hide()
   $('.clear').show()
-}
-
-const clearRides = () => {
-  $('.content').empty()
-  // $('.clear').hide()
-  $('.get').show()
 }
 
 const deleteRideSuccess = (index) => {
