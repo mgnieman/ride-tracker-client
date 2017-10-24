@@ -20,9 +20,9 @@
         <form id="add-ride">
           <fieldset>
             <legend>Add recent ride info</legend>
-            <input type="text" name="ride[date]" placeholder="Date (yyyy-mm-dd)">
-            <input type="text" name="ride[distance]" placeholder="Distance in miles">
-            <input type="text" name="ride[duration]" placeholder="Duration in minutes">
+            <input type="text" name="ride[date]" placeholder="Date (yyyy-mm-dd)" required pattern="[0-9]{4}[-][0-9]{2}[-][0-9]{2}" maxlength="10">
+            <input type="text" name="ride[distance]" placeholder="Distance in miles" required pattern="\d*\.?\d{1,2}" maxlength="6">
+            <input type="text" name="ride[duration]" placeholder="Duration in minutes" required pattern="\d*\.?\d{1,2}" maxlength="6">
             <input type="submit" name="submit" value="Add Ride">
           </fieldset>
         </form>
