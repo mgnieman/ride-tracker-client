@@ -39,3 +39,6 @@ Development story:
 
 10.24
 - Add an "Update" button, which initiates user changes
+- Added logic to clear forms after submit
+- Fixed random bugs
+- Deployed to prod.

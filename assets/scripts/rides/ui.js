@@ -63,6 +63,7 @@ const updateRideSuccess = () => {
   $('#clearRidesButton').click()
   $('#getRidesButton').click()
   $('#message').text('Your changes have been saved')
+  $('.update').hide()
 }
 
 const failure = () => {

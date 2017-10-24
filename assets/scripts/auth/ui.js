@@ -5,6 +5,7 @@ const store = require('../store')
 const signUpSuccess = function (data) {
   $('#message').text('Your account has been successfully created')
   $('#sign-up').hide()
+  $('#sign-up')[0].reset()
 }
 const signUpFailure = function () {
   $('#message').text('Something went wrong, please try again')
@@ -15,6 +16,7 @@ const signInSuccess = function (data) {
   $('.sign-up-in').hide()
   $('.get').show()
   $('.display-add-form').show()
+  $('#sign-in')[0].reset()
   store.user = data.user
 }
 
@@ -24,6 +26,7 @@ const signInFailure = function () {
 
 const changePasswordSuccess = function () {
   $('#message').text('Your password has been updated')
+  $('#change-password')[0].reset()
 }
 const changePasswordFailure = function () {
   $('#message').text('Error changing password')
