@@ -4,7 +4,7 @@ const showRidesTemplate = require('../templates/ride-listing.handlebars')
 const store = require('../store')
 
 const addNewRide = () => {
-  // $('.get').hide()
+  $('.get').hide()
   $('.display-add-form').hide()
   $('.add-new-ride').show()
 }
@@ -24,17 +24,11 @@ const getRidesSuccess = (data) => {
 
 const clearRides = () => {
   $('.content').empty()
-  $('.clear').hide()
+  // $('.clear').hide()
   $('.get').show()
 }
 
-// const enterDateToDelete = () => {
-//   $('.add-new-ride').hide()
-//   $('.delete-a-ride').show()
-// }
-
 const deleteRideSuccess = (index) => {
-  console.log('index', index)
   // const showRidesHtml = showRidesTemplate({ rides: data.rides })
   // // console.log('data.rides is ', data.rides)
   // $('.content').append(showRidesHtml)
@@ -65,6 +59,12 @@ const editRideSuccess = (event) => {
   idField.attr('value', id)
 }
 
+const updateRideSuccess = () => {
+  $('#clearRidesButton').click()
+  $('#getRidesButton').click()
+  $('#message').text('Your changes have been saved')
+}
+
 const failure = () => {
   $('message').text('Something went wrong, please try again')
 }
@@ -76,5 +76,6 @@ module.exports = {
   clearRides,
   deleteRideSuccess,
   editRideSuccess,
+  updateRideSuccess,
   failure
 }

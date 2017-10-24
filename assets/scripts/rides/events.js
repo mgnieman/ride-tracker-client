@@ -8,18 +8,6 @@ const onAddNewRide = (event) => {
   event.preventDefault()
   ui.addNewRide()
 }
-const onEditRide = () => {
-  ui.editRideSuccess(event)
-}
-
-// const onUpdateRide = (data) => {
-//   event.preventDefault()
-//   console.log('update fire!')
-//   api.updateRide(data)
-//     .then(ui.updateRideSuccess)
-//     .catch(ui.failure)
-// }
-
 const onAddRide = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
@@ -27,7 +15,6 @@ const onAddRide = (event) => {
     .then(ui.addRideSuccess)
     .catch(ui.failure)
 }
-
 const onGetRides = (event) => {
   event.preventDefault()
   api.getRides()
@@ -37,12 +24,10 @@ const onGetRides = (event) => {
     })
     .catch(ui.failure)
 }
-
 const onClearRides = (event) => {
   event.preventDefault()
   ui.clearRides()
 }
-
 const onDeleteRide = (event) => {
   event.preventDefault()
   const index = $(event.target).attr('data-id')
@@ -50,6 +35,24 @@ const onDeleteRide = (event) => {
     .then(() => {
       ui.deleteRideSuccess(index)
     })
+    .catch(ui.failure)
+}
+const onEditRide = () => {
+  ui.editRideSuccess(event)
+  const index = $(event.target).attr('data-id')
+  addUpdateHandlers()
+  return index
+}
+
+const onUpdateRide = (event) => {
+  event.preventDefault()
+  // console.log('onEditRide.index', onEditRide)
+  console.log('update event.target is ', event.target)
+  // const index = $(event.target).attr('data-id')
+  // console.log('update index is', index)
+  const data = getFormFields(event.target)
+  api.updateRide(data)
+    .then(ui.updateRideSuccess)
     .catch(ui.failure)
 }
 
@@ -63,6 +66,10 @@ const addHandlers = () => {
 const addRowHandlers = () => {
   $('.deleteRideButton').on('click', onDeleteRide)
   $('.editRideButton').on('click', onEditRide)
+}
+
+const addUpdateHandlers = () => {
+  $('#update-ride').on('submit', onUpdateRide)
 }
 
 module.exports = {

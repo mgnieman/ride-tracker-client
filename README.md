@@ -23,3 +23,6 @@ Future Enhancements:
 - Added a form to add ride info (date, distance & duration) and updated the CREATE method to add the data to my resource.
 - Added Delete buttons next to each ride entry
 - Added an Edit button which, when selected, causes an edit form to display
+
+10.24
+- Add an "Update" button, which initiates user changes
