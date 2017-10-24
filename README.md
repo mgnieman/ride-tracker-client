@@ -18,6 +18,9 @@ User stories:
 - As a signed-in user, I want to delete a ride so that I can fix a row that is completely wrong and re-enter the info later.
 
 Future Enhancements:
+- Pretty-up the UI
+- Instead of error messaging, include style requirements in Distance & Date fields of Add Ride form
+- Format Duration as time (hh:mm:ss)on UI & convert to minutes on back-end for calculation purposes
 - Add an "Average Speed" column, calculated with Distance & Duration
 - Link to a table called Routes, which stores user-provided route names
 - Allow users to sort data from previous rides by week/month/time-since-chosen-date in order to:
