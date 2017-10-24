@@ -42,3 +42,4 @@ Development story:
 - Added logic to clear forms after submit
 - Fixed random bugs
 - Deployed to prod.
+- Added validation for the Add Ride form

@@ -13,6 +13,7 @@ const addNewRide = () => {
   $('.get').hide()
   $('.content').hide()
   $('.display-add-form').hide()
+  $('.update').hide()
   $('.add-new-ride').show()
 }
 
