@@ -8,13 +8,15 @@ const onAddNewRide = (event) => {
   event.preventDefault()
   ui.addNewRide()
 }
+const onEditRide = () => {
+  ui.editRideSuccess(event)
+}
 
-// USE FOR EDIT RIDE?
-// const onAddRide = (data) => {
+// const onUpdateRide = (data) => {
 //   event.preventDefault()
-//   console.log('submit new ride info')
-//   api.addRide(data)
-//     .then(ui.addRideSuccess)
+//   console.log('update fire!')
+//   api.updateRide(data)
+//     .then(ui.updateRideSuccess)
 //     .catch(ui.failure)
 // }
 
@@ -31,7 +33,7 @@ const onGetRides = (event) => {
   api.getRides()
     .then((data) => {
       ui.getRidesSuccess(data)
-      addDeleteHandlers()
+      addRowHandlers()
     })
     .catch(ui.failure)
 }
@@ -40,21 +42,6 @@ const onClearRides = (event) => {
   event.preventDefault()
   ui.clearRides()
 }
-
-// const onEnterDateToDelete = (event) => {
-//   event.preventDefault()
-//   ui.enterDateToDelete()
-// }
-//
-// const onDeleteRide = (event) => {
-//   event.preventDefault()
-//   console.log('event is ', event)
-//   console.log('event.target is ', event.target)
-//   const data = getFormFields(event.target)
-//   api.deleteRide(data)
-//     .then(ui.deleteRideSuccess)
-//     .catch(ui.failure)
-// }
 
 const onDeleteRide = (event) => {
   event.preventDefault()
@@ -71,12 +58,11 @@ const addHandlers = () => {
   $('#add-ride').on('submit', onAddRide)
   $('#getRidesButton').on('click', onGetRides)
   $('#clearRidesButton').on('click', onClearRides)
-  // $('#enterDateToDeleteButton').on('click', onEnterDateToDelete)
-  // $('#delete-ride').on('submit', onDeleteRide)
 }
 
-const addDeleteHandlers = () => {
+const addRowHandlers = () => {
   $('.deleteRideButton').on('click', onDeleteRide)
+  $('.editRideButton').on('click', onEditRide)
 }
 
 module.exports = {

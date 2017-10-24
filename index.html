@@ -32,11 +32,26 @@
       <div class = "get">
         <button id="getRidesButton" class="btn btn-default">Get Rides</button>
       </div>
+
+      <div class = "update">
+        <form id="update-ride">
+          <fieldset>
+            <legend>Update</legend>
+            <div style = "display: none;"><input type="text" name="ride[id]"></div>
+            <div>Date: <input type="text" name="ride[date]"></div>
+            <div>Distance: <input type="text" name="ride[distance]"></div>
+            <div>Duration: <input type="text" name="ride[duration]"></div>
+            <div><input type="submit" name="submit" value="Edit Ride"></div>
+          </fieldset>
+        </form>
+      </div>
       <div class = "clear">
         <button id="clearRidesButton" class="btn btn-default">Clear Rides</button>
         <div id="content" class="content">
         </div>
       </div>
+
+      <!-- the handlebars stuff is injected here -->
 
       <div class = "signed-in">
         <form id="sign-out">

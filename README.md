@@ -11,7 +11,7 @@ User stories:
 Technologies Used:  JavaScript, jQuery, API, AJAX
 
 Future Enhancements:
-- When "Delete A Ride" button is selected, make a button appear next to each ride so user can easily select which ride to delete
+-
 
 10.20
 - Worked on authorization - sign up gave me a lot of trouble but eventually got help figuring out that I needed a function for `addHandlers` in `index.js`.  It's 4:24pm and I finally have sign-up, sign-in, change-password & sign-out all working correctly.
@@ -21,3 +21,5 @@ Future Enhancements:
 
 10.23
 - Added a form to add ride info (date, distance & duration) and updated the CREATE method to add the data to my resource.
+- Added Delete buttons next to each ride entry
+- Added an Edit button which, when selected, causes an edit form to display

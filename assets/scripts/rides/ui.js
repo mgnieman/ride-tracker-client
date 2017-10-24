@@ -43,6 +43,28 @@ const deleteRideSuccess = (index) => {
   $('#message').text('Your ride has been deleted')
 }
 
+const editRideSuccess = (event) => {
+  $('.update').show()
+  // prefill Date, Distance, Duration
+  const tr = $(event.target).parent().parent()
+
+  const date = tr.find('td.ride-date').text()
+  const dateField = $('#update-ride').find('input[name="ride[date]"]')
+  dateField.attr('value', date)
+
+  const distance = tr.find('td.ride-distance').text()
+  const distanceField = $('#update-ride').find('input[name="ride[distance]"]')
+  distanceField.attr('value', distance)
+
+  const duration = tr.find('td.ride-duration').text()
+  const durationField = $('#update-ride').find('input[name="ride[duration]"]')
+  durationField.attr('value', duration)
+
+  const id = $(event.target).attr('data-id')
+  const idField = $('#update-ride').find('input[name="ride[id]"]')
+  idField.attr('value', id)
+}
+
 const failure = () => {
   $('message').text('Something went wrong, please try again')
 }
@@ -52,7 +74,7 @@ module.exports = {
   addRideSuccess,
   getRidesSuccess,
   clearRides,
-  // enterDateToDelete,
   deleteRideSuccess,
+  editRideSuccess,
   failure
 }
