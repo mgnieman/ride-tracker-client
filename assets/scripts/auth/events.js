@@ -4,6 +4,7 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 
 const api = require('./api')
 const ui = require('./ui')
+const ridesUi = require('../rides/ui')
 
 const onSignUp = function (event) {
   const data = getFormFields(this)
@@ -28,6 +29,8 @@ const onChangePassword = function (event) {
 }
 const onSignOut = function (event) {
   event.preventDefault()
+  // clear previous user's rides
+  ridesUi.clearRides()
   api.signOut()
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)

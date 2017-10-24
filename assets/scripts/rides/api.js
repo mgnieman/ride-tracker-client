@@ -26,13 +26,6 @@ const addRide = function (data) {
       Authorization: 'Token token=' + store.user.token
     },
     data: data
-    // data: {
-    //   'ride': {
-    //     'date': data.date
-    //     // 'distance': 'ride[distance]',
-    //     // 'duration': 'ride[duration]'
-    //   }
-    // }
   })
 }
 
@@ -47,7 +40,30 @@ const getRides = function () {
   })
 }
 
+// const deleteRide = function (data) {
+//   return $.ajax({
+//     url: config.apiOrigin + '/rides/' + data.rideId,
+//     method: 'DELETE',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     },
+//     data: data
+//   })
+// }
+
+const deleteRide = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/rides/' + data,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+    // data: data
+  })
+}
+
 module.exports = {
   addRide,
-  getRides
+  getRides,
+  deleteRide
 }
