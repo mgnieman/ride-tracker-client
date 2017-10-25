@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Ride Tracker</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+
+    <body class="container-fluid">
+      <h1>Ride Tracker</h1>
+      <div id='message'></div>
+
+      <div class = "add-new-ride">
+        <form id="add-ride">
+          <fieldset>
+            <legend>Add recent ride info</legend>
+            <input type="text" name="ride[date]" placeholder="Date (yyyy-mm-dd)" required pattern="^(\d{4})\D?(0[1-9]|1[0-2])\D?([12]\d|0[1-9]|3[01])$" maxlength="10">
+            <input type="text" name="ride[distance]" placeholder="Miles (xxx.xx)" required pattern="\d*\.?\d{1,2}" maxlength="6">
+            <input type="text" name="ride[duration]" placeholder="Duration in minutes" required pattern="\d*\.?\d{1,2}" maxlength="6">
+            <input type="submit" name="submit" value="Add Ride">
+          </fieldset>
+        </form>
+      </div>
+
+      <div class = "display-add-form">
+        <button id="addNewRideButton" class="btn btn-default">Add A Ride</button>
+      </div>
+      <div class = "get">
+        <button id="getRidesButton" class="btn btn-default">Get Rides</button>
+      </div>
+
+      <div class = "update">
+        <form id="update-ride">
+          <fieldset>
+            <legend>Make changes to selected ride, then select "Update"</legend>
+            <div style = "display: none;"><input type="text" name="ride[id]"></div>
+            <div>Date: <input type="text" name="ride[date]"></div>
+            <div>Distance: <input type="text" name="ride[distance]"></div>
+            <div>Duration: <input type="text" name="ride[duration]"></div>
+            <div><input type="submit" name="submit" value="Update"></div>
+          </fieldset>
+        </form>
+      </div>
+
+      <div id="content" class="content"></div>
+
+      <!-- <div class = "clear">
+        <button id="clearRidesButton" class="btn btn-default">Clear Rides</button>
+      </div> -->
+
+      <!-- the handlebars stuff is injected here -->
+
+      <div class = "signed-in">
+        <form id="sign-out">
+          <fieldset>
+            <legend>Sign Out</legend>
+            <input type="submit" name="submit" value="Sign Out">
+          </fieldset>
+        </form>
+        <form id="change-password">
+          <fieldset>
+            <legend>Change password</legend>
+            <input type="text" name="passwords[old]" placeholder="Current Password">
+            <input type="text" name="passwords[new]" placeholder="New Password">
+            <input type="submit" name="submit" value="Update Password">
+          </fieldset>
+        </form>
+      </div>
+
+      <form id="sign-in">
+        <fieldset>
+          <legend>Sign in</legend>
+          <input type="text" name="credentials[email]" placeholder="Enter Email">
+          <input type="text" name="credentials[password]" placeholder="Enter Password">
+          <input type="submit" name="submit" value="Sign in">
+        </fieldset>
+      </form>
+      <form id="sign-up">
+        <fieldset>
+          <legend>Don't have an account? Sign up</legend>
+          <input type="text" name="credentials[email]" placeholder="Enter Email">
+          <input type="text" name="credentials[password]" placeholder="Enter Password">
+          <input type="text" name="credentials[password_confirmation]" placeholder="Re-Enter Password">
+          <input type="submit" name="submit" value="Sign up">
+        </fieldset>
+      </form>
+
+    </body>
+</html>
