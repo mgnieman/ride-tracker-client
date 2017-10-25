@@ -6,7 +6,7 @@ const store = require('../store')
 const clearRides = () => {
   $('.content').empty()
   // $('.clear').hide()
-  $('.get').show()
+  // $('.get').show()
 }
 
 const addNewRide = () => {
@@ -21,7 +21,7 @@ const addRideSuccess = (data) => {
   store.rideId = data.ride.id
   $('#add-ride')[0].reset()
   $('.add-new-ride').hide()
-  $('#message').text('Your ride has been added. Select Get Rides to view')
+  $('#message').text('Your ride has been added. Select Get Rides to view all your rides')
   $('.get').show()
 }
 
@@ -30,13 +30,15 @@ const getRidesSuccess = (data) => {
   const showRidesHtml = showRidesTemplate({ rides: data.rides })
   $('.content').append(showRidesHtml).show()
   $('.get').hide()
-  $('.clear').show()
+  // $('.clear').show()
   $('.display-add-form').show()
   $('#message').text('')
 }
 
 const deleteRideSuccess = (index) => {
-  $('#clearRidesButton').click()
+  // $('#clearRidesButton').click()
+  clearRides()
+  //
   $('#getRidesButton').click()
   $('#message').text('Your ride has been deleted')
 }
@@ -64,7 +66,9 @@ const editRideSuccess = (event) => {
 }
 
 const updateRideSuccess = () => {
-  $('#clearRidesButton').click()
+  // $('#clearRidesButton').click()
+  clearRides()
+  //
   $('#getRidesButton').click()
   $('#message').text('Your changes have been saved')
   $('#update-ride')[0].reset()
@@ -72,7 +76,7 @@ const updateRideSuccess = () => {
 }
 
 const failure = () => {
-  $('message').text('Something went wrong, please try again')
+  $('#message').text('Something went wrong, please try again')
 }
 
 module.exports = {

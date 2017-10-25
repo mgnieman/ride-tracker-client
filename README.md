@@ -19,9 +19,10 @@ User stories:
 
 Future Enhancements:
 - Pretty-up the UI
-- Instead of error messaging, include style requirements in Distance & Date fields of Add Ride form
+- Improve messaging for error handling of Distance & Date fields of Add Ride form
 - Format Duration as time (hh:mm:ss)on UI & convert to minutes on back-end for calculation purposes
 - Add an "Average Speed" column, calculated with Distance & Duration
+- Limit the number of rides displayed on the main page (maybe to 10 or 20)
 - Link to a table called Routes, which stores user-provided route names
 - Allow users to sort data from previous rides by week/month/time-since-chosen-date in order to:
   - view total distance ridden for chosen periods of time
