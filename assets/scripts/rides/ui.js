@@ -5,8 +5,6 @@ const store = require('../store')
 
 const clearRides = () => {
   $('.content').empty()
-  // $('.clear').hide()
-  // $('.get').show()
 }
 
 const addNewRide = () => {
@@ -30,22 +28,18 @@ const getRidesSuccess = (data) => {
   const showRidesHtml = showRidesTemplate({ rides: data.rides })
   $('.content').append(showRidesHtml).show()
   $('.get').hide()
-  // $('.clear').show()
   $('.display-add-form').show()
   $('#message').text('')
 }
 
 const deleteRideSuccess = (index) => {
-  // $('#clearRidesButton').click()
   clearRides()
-  //
   $('#getRidesButton').click()
   $('#message').text('Your ride has been deleted')
 }
 
 const editRideSuccess = (event) => {
   $('.update').show()
-  // prefill Date, Distance, Duration
   const tr = $(event.target).parent().parent()
 
   const date = tr.find('td.ride-date').text()
@@ -66,9 +60,7 @@ const editRideSuccess = (event) => {
 }
 
 const updateRideSuccess = () => {
-  // $('#clearRidesButton').click()
   clearRides()
-  //
   $('#getRidesButton').click()
   $('#message').text('Your changes have been saved')
   $('#update-ride')[0].reset()

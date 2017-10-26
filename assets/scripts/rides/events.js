@@ -24,10 +24,6 @@ const onGetRides = (event) => {
     })
     .catch(ui.failure)
 }
-// const onClearRides = (event) => {
-//   event.preventDefault()
-//   ui.clearRides()
-// }
 const onDeleteRide = (event) => {
   event.preventDefault()
   const index = $(event.target).attr('data-id')
@@ -54,7 +50,6 @@ const addHandlers = () => {
   $('#addNewRideButton').on('click', onAddNewRide)
   $('#add-ride').on('submit', onAddRide)
   $('#getRidesButton').on('click', onGetRides)
-  // $('#clearRidesButton').on('click', onClearRides)
 }
 const addRowHandlers = () => {
   $('.deleteRideButton').on('click', onDeleteRide)
