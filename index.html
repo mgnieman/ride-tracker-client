@@ -20,10 +20,12 @@
         <form id="add-ride">
           <fieldset>
             <legend>Add recent ride info</legend>
-            <input type="text" name="ride[date]" placeholder="Date (yyyy-mm-dd)" required pattern="^(\d{4})\D?(0[1-9]|1[0-2])\D?([12]\d|0[1-9]|3[01])$" maxlength="10">
-            <input type="text" name="ride[distance]" placeholder="Miles (xxx.xx)" required pattern="\d*\.?\d{1,2}" maxlength="6">
+            <!-- id is new (in n3 places) and needs to be tested-->
+            <input type="text" name="ride[date]" placeholder="Date (yyyy-mm-dd)" required
+            pattern="^(\d{4})\D?(0[1-9]|1[0-2])\D?([12]\d|0[1-9]|3[01])$" maxlength="10" id="date">
+            <input type="text" name="ride[distance]" placeholder="Miles (xxx.xx)" required pattern="\d*\.?\d{1,2}" maxlength="6" id="distance">
             <input type="text" name="ride[duration]" placeholder="Duration in minutes" required pattern="\d*\.?\d{1,2}" maxlength="6">
-            <input type="submit" name="submit" value="Add Ride">
+            <input type="submit" name="submit" value="Add Ride" id="duration" >
           </fieldset>
         </form>
       </div>
@@ -62,8 +64,8 @@
         <form id="change-password">
           <fieldset>
             <legend>Change password</legend>
-            <input type="text" name="passwords[old]" placeholder="Current Password">
-            <input type="text" name="passwords[new]" placeholder="New Password">
+            <input type="password" name="passwords[old]" placeholder="Current Password">
+            <input type="password" name="passwords[new]" placeholder="New Password">
             <input type="submit" name="submit" value="Update Password">
           </fieldset>
         </form>
@@ -73,7 +75,7 @@
         <fieldset>
           <legend>Sign in</legend>
           <input type="text" name="credentials[email]" placeholder="Enter Email">
-          <input type="text" name="credentials[password]" placeholder="Enter Password">
+          <input type="password" name="credentials[password]" placeholder="Enter Password">
           <input type="submit" name="submit" value="Sign in">
         </fieldset>
       </form>
@@ -81,8 +83,8 @@
         <fieldset>
           <legend>Don't have an account? Sign up</legend>
           <input type="text" name="credentials[email]" placeholder="Enter Email">
-          <input type="text" name="credentials[password]" placeholder="Enter Password">
-          <input type="text" name="credentials[password_confirmation]" placeholder="Re-Enter Password">
+          <input type="password" name="credentials[password]" placeholder="Enter Password">
+          <input type="password" name="credentials[password_confirmation]" placeholder="Re-Enter Password">
           <input type="submit" name="submit" value="Sign up">
         </fieldset>
       </form>
