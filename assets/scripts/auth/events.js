@@ -7,15 +7,16 @@ const ui = require('./ui')
 const ridesUi = require('../rides/ui')
 
 const onSignUp = function (event) {
-  const data = getFormFields(this)
   event.preventDefault()
+  const data = getFormFields(this)
   api.signUp(data)
-    .then(ui.signUpSuccess)
+    .then(api.signUpSignIn)
+    .then(ui.signInSuccess)
     .catch(ui.signUpFailure)
 }
 const onSignIn = function (event) {
-  const data = getFormFields(this)
   event.preventDefault()
+  const data = getFormFields(this)
   api.signIn(data)
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)

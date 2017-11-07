@@ -3,10 +3,18 @@ const config = require('../config')
 const store = require('../store')
 
 const signUp = function (data) {
+  store.onSignUpSignIn = data
   return $.ajax({
     url: config.apiOrigin + '/sign-up',
     method: 'POST',
     data
+  })
+}
+const signUpSignIn = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/sign-in',
+    method: 'POST',
+    data: store.onSignUpSignIn
   })
 }
 const signIn = function (data) {
@@ -38,6 +46,7 @@ const signOut = function () {
 
 module.exports = {
   signUp,
+  signUpSignIn,
   signIn,
   changePassword,
   signOut

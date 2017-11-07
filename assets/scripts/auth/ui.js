@@ -2,11 +2,11 @@
 
 const store = require('../store')
 
-const signUpSuccess = function (data) {
-  $('#message').text('Your account has been successfully created')
-  $('#sign-up').hide()
-  $('#sign-up')[0].reset()
-}
+// const signUpSuccess = function (data) {
+//   $('#message').text('Your account has been successfully created')
+//   $('#sign-up').hide()
+//   $('#sign-up')[0].reset()
+// }
 const signUpFailure = function () {
   $('#message').text('Something went wrong, please try again')
 }
@@ -18,6 +18,7 @@ const signInSuccess = function (data) {
   $('.get').show()
   $('.display-add-form').show()
   $('#sign-in')[0].reset()
+  $('#sign-up')[0].reset()
   store.user = data.user
 }
 
@@ -52,7 +53,7 @@ const signOutFailure = function () {
 }
 
 module.exports = {
-  signUpSuccess,
+  // signUpSuccess,
   signUpFailure,
   signInSuccess,
   signInFailure,
