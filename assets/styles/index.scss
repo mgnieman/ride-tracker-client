@@ -1,8 +1,8 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
-$background-color: #DEB887;
-$font-color: #000006;
+$background-color: #2F4F4F;
+$font-color: #FFFFFF;
 // $white: #fff;
 
 body {
@@ -11,7 +11,21 @@ body {
   height: 150%;
 
   .signed-in {
+    color: #000000;
     display: none;
+  }
+  .add-ride-form {
+    color: #000000;
+  }
+  .add-header {
+    color: $font-color;
+    color: #E5E5E5;
+  }
+  .update-ride-form {
+    color: #000000;
+  }
+  .display-when-logged-out {
+    color: #000000;
   }
 
   #add-ride-button {
@@ -20,6 +34,7 @@ body {
 
   .add-ride-form {
     display: none;
+    color: #323232;
   }
 
   .update-ride-form {

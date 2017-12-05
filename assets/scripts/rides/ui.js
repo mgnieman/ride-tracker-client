@@ -7,6 +7,13 @@ const clearRides = () => {
   $('.content').empty()
 }
 
+const sortRevChron = function (data) {
+  console.log('data.rides is', data.rides)
+  data.rides.sort(function (a, b) {
+    return Date.parse(b.date) - Date.parse(a.date)
+  })
+}
+
 const displayAddForm = () => {
   $('.content').hide()
   $('#add-ride-button').hide()
@@ -16,6 +23,7 @@ const displayAddForm = () => {
 
 const getRidesSuccess = (data) => {
   clearRides()
+  sortRevChron(data)
   const showRidesHtml = showRidesTemplate({ rides: data.rides })
   $('.content').append(showRidesHtml).show()
   $('#add-ride-button').show()

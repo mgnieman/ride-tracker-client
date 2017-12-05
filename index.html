@@ -23,7 +23,7 @@
       <div class = "add-ride-form">
         <form id="add-ride">
           <fieldset>
-            <legend>Add recent ride info</legend>
+            <legend class="add-header">Add recent ride info</legend>
             <!-- id is new (in n3 places) and needs to be tested-->
             <input type="text" name="ride[date]" placeholder="Date (yyyy-mm-dd)" required
             pattern="^(\d{4})\D?(0[1-9]|1[0-2])\D?([12]\d|0[1-9]|3[01])$" maxlength="10" id="date">
@@ -70,7 +70,7 @@
         </form>
       </div>
 
-      <form id="sign-in">
+      <form id="sign-in" class="display-when-logged-out">
         <fieldset>
           <legend>Sign in</legend>
           <input type="text" name="credentials[email]" placeholder="Enter Email">
@@ -78,7 +78,7 @@
           <input type="submit" name="submit" value="Sign in">
         </fieldset>
       </form>
-      <form id="sign-up">
+      <form id="sign-up" class="display-when-logged-out">
         <fieldset>
           <legend>Don't have an account? Sign up</legend>
           <input type="text" name="credentials[email]" placeholder="Enter Email">
