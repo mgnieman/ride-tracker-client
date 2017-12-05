@@ -4,24 +4,25 @@ const api = require('./api.js')
 const ui = require('./ui.js')
 const getFormFields = require('../../../lib/get-form-fields.js')
 
-const onAddNewRide = (event) => {
+const getRides = () => {
+  // event.preventDefault()
+  api.getRides()
+    .then((data) => {
+      ui.getRidesSuccess(data)
+      addRowHandlers()
+    })
+    .catch(ui.failure)
+}
+const onAddButton = (event) => {
   event.preventDefault()
-  ui.addNewRide()
+  ui.displayAddForm()
 }
 const onAddRide = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
   api.addRide(data)
     .then(ui.addRideSuccess)
-    .catch(ui.failure)
-}
-const onGetRides = (event) => {
-  event.preventDefault()
-  api.getRides()
-    .then((data) => {
-      ui.getRidesSuccess(data)
-      addRowHandlers()
-    })
+    // .then(getRides)
     .catch(ui.failure)
 }
 const onDeleteRide = (event) => {
@@ -31,6 +32,7 @@ const onDeleteRide = (event) => {
     .then(() => {
       ui.deleteRideSuccess(index)
     })
+    .then(getRides)
     .catch(ui.failure)
 }
 const onEditRide = () => {
@@ -47,9 +49,9 @@ const onUpdateRide = (event) => {
     .catch(ui.failure)
 }
 const addHandlers = () => {
-  $('#addNewRideButton').on('click', onAddNewRide)
+  $('#add-ride-button').on('click', onAddButton)
   $('#add-ride').on('submit', onAddRide)
-  $('#getRidesButton').on('click', onGetRides)
+  // $('#getRidesButton').on('click', onGetRides)
 }
 const addRowHandlers = () => {
   $('.deleteRideButton').on('click', onDeleteRide)
@@ -60,5 +62,6 @@ const addUpdateHandlers = () => {
 }
 
 module.exports = {
-  addHandlers
+  addHandlers,
+  getRides
 }

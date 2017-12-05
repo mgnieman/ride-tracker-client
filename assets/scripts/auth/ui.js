@@ -1,5 +1,6 @@
 'use strict'
 
+const ridesEvents = require('../rides/events.js')
 const store = require('../store')
 
 // const signUpSuccess = function (data) {
@@ -11,15 +12,16 @@ const signUpFailure = function () {
   $('#message').text('Something went wrong, please try again')
 }
 const signInSuccess = function (data) {
+  store.user = data.user
   $('#message').text('You are now signed in')
   $('#sign-in').hide()
   $('#sign-up').hide()
   $('.signed-in').show()
   $('.get').show()
-  $('.display-add-form').show()
+  $('#add-ride-button').show()
   $('#sign-in')[0].reset()
   $('#sign-up')[0].reset()
-  store.user = data.user
+  ridesEvents.getRides()
 }
 
 const signInFailure = function () {
@@ -39,13 +41,13 @@ const signOutSuccess = function () {
   $('#sign-in').show()
   $('#sign-up').show()
   $('.signed-in').hide()
-  $('.display-add-form').hide()
+  $('#add-ride-button').hide()
   $('.get').hide()
   $('.clear').hide()
   $('.ride-list').hide()
   $('.update').hide()
-  $('.add-new-ride').hide()
-  $('.display-add-form').hide()
+  $('.add-ride-form').hide()
+  $('#add-ride-button').hide()
   store.user = null
 }
 const signOutFailure = function () {

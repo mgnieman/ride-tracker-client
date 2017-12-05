@@ -1,40 +1,43 @@
 'use strict'
 
 const showRidesTemplate = require('../templates/ride-listing.handlebars')
-const store = require('../store')
+// const store = require('../store')
 
 const clearRides = () => {
   $('.content').empty()
 }
 
-const addNewRide = () => {
-  $('.get').hide()
+const displayAddForm = () => {
+  // $('.get').hide()
   $('.content').hide()
-  $('.display-add-form').hide()
+  $('#add-ride-button').hide()
   $('.update').hide()
-  $('.add-new-ride').show()
+  $('.add-ride-form').show()
 }
 
-const addRideSuccess = (data) => {
-  store.rideId = data.ride.id
+const addRideSuccess = () => {
+  // store.rideId = data.ride.id
   $('#add-ride')[0].reset()
-  $('.add-new-ride').hide()
-  $('#message').text('Your ride has been added. Select Get Rides to view all your rides')
-  $('.get').show()
+  $('.add-ride-form').hide()
+  $('#add-ride-button').show()
+  // $('#message').text('Your ride has been added. Select Get Rides to view all your rides')
+  // $('.get').show()
 }
 
 const getRidesSuccess = (data) => {
   clearRides()
   const showRidesHtml = showRidesTemplate({ rides: data.rides })
   $('.content').append(showRidesHtml).show()
-  $('.get').hide()
-  $('.display-add-form').show()
+  //
+  $('#add-ride-button').show()
   $('#message').text('')
 }
 
 const deleteRideSuccess = (index) => {
   clearRides()
+  //
   $('#getRidesButton').click()
+  //
   $('#message').text('Your ride has been deleted')
 }
 
@@ -72,7 +75,7 @@ const failure = () => {
 }
 
 module.exports = {
-  addNewRide,
+  displayAddForm,
   addRideSuccess,
   getRidesSuccess,
   clearRides,
