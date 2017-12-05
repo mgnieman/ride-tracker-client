@@ -38,10 +38,7 @@ const addRideSuccess = () => {
 }
 
 const deleteRideSuccess = (index) => {
-  // clearRides()
-  //
-  $('#getRidesButton').click()
-  //
+  // do I need this??  Probably not
   $('#message').text('Your ride has been deleted')
 }
 
