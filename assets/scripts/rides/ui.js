@@ -8,7 +8,6 @@ const clearRides = () => {
 }
 
 const displayAddForm = () => {
-  // $('.get').hide()
   $('.content').hide()
   $('#add-ride-button').hide()
   $('.update').hide()
@@ -20,8 +19,6 @@ const addRideSuccess = () => {
   $('#add-ride')[0].reset()
   $('.add-ride-form').hide()
   $('#add-ride-button').show()
-  // $('#message').text('Your ride has been added. Select Get Rides to view all your rides')
-  // $('.get').show()
 }
 
 const getRidesSuccess = (data) => {
