@@ -17,21 +17,26 @@
       <div id='message'></div>
 
       <div>
-        <button id="add-ride-button" class="btn btn-default">Add A Ride</button>
+        <button id="add-ride-button" class="btn btn-primary">Add A Ride</button>
       </div>
 
       <div class = "add-ride-form">
-        <form id="add-ride">
-          <fieldset>
-            <legend class="add-header">Add recent ride info</legend>
-            <!-- id is new (in n3 places) and needs to be tested-->
-            <input type="text" name="ride[date]" placeholder="Date (yyyy-mm-dd)" required
-            pattern="^(\d{4})\D?(0[1-9]|1[0-2])\D?([12]\d|0[1-9]|3[01])$" maxlength="10" id="date">
-            <input type="text" name="ride[distance]" placeholder="Miles (xxx.xx)" required pattern="\d*\.?\d{1,2}" maxlength="6" id="distance">
-            <input type="text" name="ride[duration]" placeholder="Duration in minutes" required pattern="\d*\.?\d{1,2}" maxlength="6">
-            <input type="submit" name="submit" value="Add Ride" id="duration" >
-          </fieldset>
-        </form>
+          <form id="add-ride">
+            <fieldset>
+              <legend class="add-header">Add recent ride info</legend>
+              <!-- id is new (in n3 places) and needs to be tested-->
+              <div class="form-text">Date: <input type="text" name="ride[date]" placeholder="(yyyy-mm-dd)" required
+              pattern="^(\d{4})\D?(0[1-9]|1[0-2])\D?([12]\d|0[1-9]|3[01])$" maxlength="10" id="date"></div>
+              <br>
+              <div class="form-text">Distance: <input type="text" name="ride[distance]" placeholder="miles (xxx.xx)" required pattern="\d*\.?\d{1,2}" maxlength="6" id="distance"></div>
+              <br>
+              <div class="form-text">Duration: <input type="text" name="ride[duration]" placeholder="minutes (xxx.xx)" required pattern="\d*\.?\d{1,2}" maxlength="6"></div>
+              <br>
+              <div><input type="submit" name="submit" value="Add Ride" id="duration" ></div>
+              <br>
+              <div><button type="button" class="btn btn-secondary" id="cancelAdd">Cancel</button></div>
+            </fieldset>
+          </form>
       </div>
 
       <div class = "update-ride-form">
@@ -39,10 +44,15 @@
           <fieldset>
             <legend>Make changes to selected ride, then select "Update"</legend>
             <div style = "display: none;"><input type="text" name="ride[id]"></div>
-            <div>Date: <input type="text" name="ride[date]"></div>
-            <div>Distance: <input type="text" name="ride[distance]"></div>
-            <div>Duration: <input type="text" name="ride[duration]"></div>
-            <div><input type="submit" name="submit" value="Update"></div>
+            <div class="form-text">Date: <input type="text" name="ride[date]"></div>
+            <br>
+            <div class="form-text">Distance: <input type="text" name="ride[distance]"></div>
+            <br>
+            <div class="form-text">Duration: <input type="text" name="ride[duration]"></div>
+            <br>
+            <div class="form-text"><input type="submit" name="submit" value="Update"></div>
+            <br>
+            <button type="button" class="btn btn-secondary" id="cancelEdit">Cancel</button>
           </fieldset>
         </form>
       </div>
@@ -78,6 +88,7 @@
           <input type="submit" name="submit" value="Sign in">
         </fieldset>
       </form>
+      <br>
       <form id="sign-up" class="display-when-logged-out">
         <fieldset>
           <legend>Don't have an account? Sign up</legend>
