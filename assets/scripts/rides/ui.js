@@ -14,6 +14,14 @@ const displayAddForm = () => {
   $('.add-ride-form').show()
 }
 
+const getRidesSuccess = (data) => {
+  clearRides()
+  const showRidesHtml = showRidesTemplate({ rides: data.rides })
+  $('.content').append(showRidesHtml).show()
+  $('#add-ride-button').show()
+  $('#message').text('')
+}
+
 const addRideSuccess = () => {
   // store.rideId = data.ride.id
   $('#add-ride')[0].reset()
@@ -21,26 +29,19 @@ const addRideSuccess = () => {
   $('#add-ride-button').show()
 }
 
-const getRidesSuccess = (data) => {
-  clearRides()
-  const showRidesHtml = showRidesTemplate({ rides: data.rides })
-  $('.content').append(showRidesHtml).show()
-  //
-  $('#add-ride-button').show()
-  $('#message').text('')
-}
-
 const deleteRideSuccess = (index) => {
-  clearRides()
+  // clearRides()
   //
   $('#getRidesButton').click()
   //
   $('#message').text('Your ride has been deleted')
 }
 
-const editRideSuccess = (event) => {
-  $('.update').show()
+const displayEditForm = (event) => {
   const tr = $(event.target).parent().parent()
+  $('#add-ride-button').hide()
+  $('#content').hide()
+  $('.update-ride-form').show()
 
   const date = tr.find('td.ride-date').text()
   const dateField = $('#update-ride').find('input[name="ride[date]"]')
@@ -60,11 +61,8 @@ const editRideSuccess = (event) => {
 }
 
 const updateRideSuccess = () => {
-  clearRides()
-  $('#getRidesButton').click()
-  $('#message').text('Your changes have been saved')
+  $('.update-ride-form').hide()
   $('#update-ride')[0].reset()
-  $('.update').hide()
 }
 
 const failure = () => {
@@ -77,7 +75,7 @@ module.exports = {
   getRidesSuccess,
   clearRides,
   deleteRideSuccess,
-  editRideSuccess,
+  displayEditForm,
   updateRideSuccess,
   failure
 }
