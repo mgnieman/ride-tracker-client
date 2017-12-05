@@ -70,6 +70,21 @@ const updateRideSuccess = () => {
   $('#update-ride')[0].reset()
 }
 
+const cancelAddSuccess = () => {
+  // reset add form
+  // hide add form
+  // display add button
+  // display content
+  $('#add-ride')[0].reset()
+  $('.add-ride-form').hide()
+  $('#add-ride-button').show()
+  $('.content').show()
+}
+
+const cancelEditSuccess = () => {
+
+}
+
 const failure = () => {
   $('#message').text('Something went wrong, please try again')
 }
@@ -82,5 +97,7 @@ module.exports = {
   deleteRideSuccess,
   displayEditForm,
   updateRideSuccess,
+  cancelAddSuccess,
+  cancelEditSuccess,
   failure
 }

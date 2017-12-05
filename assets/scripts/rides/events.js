@@ -48,13 +48,22 @@ const onUpdateRide = (event) => {
     .then(ui.updateRideSuccess)
     .catch(ui.failure)
 }
+const onCancelAdd = () => {
+  ui.cancelAddSuccess()
+}
+const onCancelEdit = () => {
+  ui.cancelAddSuccess()
+}
+
 const addHandlers = () => {
   $('#add-ride-button').on('click', onAddButton)
   $('#add-ride').on('submit', onAddRide)
+  $('#cancel-add').on('click', onCancelAdd)
 }
 const addRowHandlers = () => {
   $('.deleteRideButton').on('click', onDeleteRide)
   $('.editRideButton').on('click', displayEditForm)
+  $('#cancel-edit').on('click', onCancelEdit)
 }
 const addUpdateHandlers = () => {
   $('#update-ride').on('submit', onUpdateRide)
